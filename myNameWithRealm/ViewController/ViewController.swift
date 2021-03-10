@@ -10,10 +10,17 @@ import RealmSwift
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    
     let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         read()
     }
@@ -23,6 +30,11 @@ class ViewController: UIViewController {
         if data.isEmpty {
             performSegue(withIdentifier: "inputNameViewController", sender: nil)
         }
+        
+        if let name = data.last?.fullName {
+            self.nameLabel.text = "Hello: \(name) 👋"
+        }
+        
     }
     
     @IBAction func addNameViewButtonPressed(_ sender: Any) {

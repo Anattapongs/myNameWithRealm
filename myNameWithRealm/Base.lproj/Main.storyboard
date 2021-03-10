@@ -45,6 +45,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="nameLabel" destination="9LF-41-Ti4" id="pg1-RY-cXL"/>
                         <segue destination="33d-gd-Xok" kind="presentation" identifier="inputNameViewController" modalPresentationStyle="fullScreen" id="wNx-92-DAc"/>
                     </connections>
                 </viewController>
@@ -77,6 +78,9 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="33d-gd-Xok" eventType="touchUpInside" id="UF5-2g-ZXB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOY-Ys-NA1">
                                 <rect key="frame" x="10" y="344" width="394" height="30"/>
@@ -106,6 +110,9 @@
                             <constraint firstItem="GFN-po-AXb" firstAttribute="leading" secondItem="4B7-Xs-XhH" secondAttribute="leading" constant="10" id="pYc-dI-HWa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="JbR-bu-2Bz" id="nYu-V7-JCY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JPR-wI-SlP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
