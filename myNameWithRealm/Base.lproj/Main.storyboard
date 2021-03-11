@@ -36,7 +36,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="Arw-kj-0rh">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="trash" id="IwE-sU-0Yh"/>
+                            <barButtonItem systemItem="trash" id="IwE-sU-0Yh">
+                                <connections>
+                                    <action selector="deleteNameButtonPressed:" destination="BYZ-38-t0r" id="25k-vk-juN"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem systemItem="add" id="r85-Y4-cJC">
                                 <connections>
                                     <action selector="addNameViewButtonPressed:" destination="BYZ-38-t0r" id="ss0-Oj-iPt"/>
@@ -95,17 +99,29 @@
                                     <action selector="cancelButtonPressed:" destination="33d-gd-Xok" eventType="touchUpInside" id="LUf-3B-UcY"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKK-HU-Xi4">
+                                <rect key="frame" x="10" y="114" width="394" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bYD-jE-x0c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" systemColor="systemOrangeColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4B7-Xs-XhH"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="4B7-Xs-XhH" firstAttribute="trailing" secondItem="JbR-bu-2Bz" secondAttribute="trailing" constant="10" id="4Ol-nR-x9y"/>
+                            <constraint firstItem="nKK-HU-Xi4" firstAttribute="leading" secondItem="4B7-Xs-XhH" secondAttribute="leading" constant="10" id="7Bd-Sl-FqA"/>
+                            <constraint firstItem="4B7-Xs-XhH" firstAttribute="trailing" secondItem="nKK-HU-Xi4" secondAttribute="trailing" constant="10" id="BzX-QF-a4a"/>
                             <constraint firstItem="4B7-Xs-XhH" firstAttribute="trailing" secondItem="GFN-po-AXb" secondAttribute="trailing" constant="10" id="CCF-1B-4m3"/>
                             <constraint firstItem="JbR-bu-2Bz" firstAttribute="leading" secondItem="4B7-Xs-XhH" secondAttribute="leading" constant="10" id="EYr-s5-hgH"/>
                             <constraint firstItem="4B7-Xs-XhH" firstAttribute="trailing" secondItem="bOY-Ys-NA1" secondAttribute="trailing" constant="10" id="G8v-c4-2EE"/>
                             <constraint firstItem="JbR-bu-2Bz" firstAttribute="top" secondItem="4B7-Xs-XhH" secondAttribute="top" constant="160" id="VYx-9l-F5L"/>
                             <constraint firstItem="GFN-po-AXb" firstAttribute="top" secondItem="JbR-bu-2Bz" secondAttribute="bottom" constant="46" id="ZIX-3M-pJj"/>
                             <constraint firstItem="bOY-Ys-NA1" firstAttribute="leading" secondItem="4B7-Xs-XhH" secondAttribute="leading" constant="10" id="dNC-t6-cQ0"/>
+                            <constraint firstItem="nKK-HU-Xi4" firstAttribute="top" secondItem="4B7-Xs-XhH" secondAttribute="top" constant="70" id="hTf-4q-4Zq"/>
                             <constraint firstItem="bOY-Ys-NA1" firstAttribute="top" secondItem="GFN-po-AXb" secondAttribute="bottom" constant="30" id="mQe-kj-Qtn"/>
                             <constraint firstItem="GFN-po-AXb" firstAttribute="leading" secondItem="4B7-Xs-XhH" secondAttribute="leading" constant="10" id="pYc-dI-HWa"/>
                         </constraints>

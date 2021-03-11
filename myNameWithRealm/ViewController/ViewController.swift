@@ -31,7 +31,7 @@ class ViewController: UIViewController {
             performSegue(withIdentifier: "inputNameViewController", sender: nil)
         }
         
-        if let name = data.last?.fullName {
+        if let name = data.first?.fullName {
             self.nameLabel.text = "Hello: \(name) 👋"
         }
         
@@ -40,6 +40,19 @@ class ViewController: UIViewController {
     @IBAction func addNameViewButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "inputNameViewController", sender: nil)
     }
+    
+    @IBAction func deleteNameButtonPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "Alert", message: "Are you sure you want to delete?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Confirm", style: .destructive, handler: { _ in
+            try! self.realm.write {
+                self.realm.deleteAll()
+                self.nameLabel.text = "Your name"
+            }
+        }))
+        present(alert, animated: true)
+    }
+    
     
 }
 
