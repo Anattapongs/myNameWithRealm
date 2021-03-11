@@ -20,10 +20,19 @@ class inputNameViewController: UIViewController {
     }
     
     func write(name: String) {
-        let name = FullName.create(withName: name)
-        try! realm.write {
-            realm.add(name)
+        let nameInPut = FullName.create(withName: name)
+        let data = realm.objects(FullName.self).first
+        
+        if data != nil {
+            try! realm.write {
+                data?.fullName = name
+            }
+        } else {
+            try! realm.write {
+                realm.add(nameInPut)
+            }
         }
+        
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
